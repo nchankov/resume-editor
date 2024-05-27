@@ -1,0 +1,12 @@
+/**
+ * Date styling
+ */
+.resume-viewer {
+    .dates {
+        .date:first-child {
+            &:after {
+                content: ' - ';
+            }
+        }
+    }
+}

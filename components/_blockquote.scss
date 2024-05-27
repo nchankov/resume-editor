@@ -1,0 +1,19 @@
+/**
+ * Block quote styling
+ */
+.resume-viewer {
+    blockquote {
+        margin: 0;
+        font-style: italic;
+        &::before {
+            content: '\201C';
+            font-size: 2vh;
+            line-height: 24px;
+        }
+        &::after {
+            content: '\201D';
+            font-size: 2vh;
+            line-height: 24px;
+        }
+    }
+}

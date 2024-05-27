@@ -1,0 +1,76 @@
+/**
+ * Typography
+ */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+html, :host {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+}
+
+.resume-viewer {
+    font-family: sans-serif;
+    font-size: 1.5vh;
+    line-height: 2vh;
+    h1 {
+        font-size: 4vh;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        line-height: 4vh;
+    }
+    h2 {
+        font-size: 3vh;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 2vh;
+        padding-bottom: 2vh;
+    }
+    h3 {
+        font-size: 1.8vh;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        line-height: 3vh;
+    }
+    h4 {
+        font-size: 1.5vh;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    p {
+        display: block;
+        margin: 0;
+    }
+    /**
+    * External link
+    */
+    a.external-link::after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'/%3E%3C/svg%3E");
+        padding-left: 1vh;
+    }
+    img {
+        max-width: 100%;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+html[dir="rtl"] {
+    a.external-link::after {
+        padding-left: 0;
+        padding-right: 1vh;
+    }
+}

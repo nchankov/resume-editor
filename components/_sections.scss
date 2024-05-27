@@ -1,0 +1,38 @@
+/**
+ * Section and Record styling
+ */
+.resume-viewer {
+    section {
+        margin-bottom: 4vh;
+        &:last-child {
+            margin-bottom: auto;
+        }
+        h3 {
+            font-weight: 600;
+        }
+        h2 {
+            display: block;
+            border-bottom: 1px solid #333;
+            margin-bottom: 2vh;
+            padding-bottom: 1vh;
+        }
+    }
+    .record {
+        margin-bottom: 4vh;
+        padding-bottom: 4vh;
+        border-bottom: 1px solid #dedede;
+
+        &:last-child {
+            margin-bottom: auto;
+            border-bottom: 1px solid transparent;
+        }
+        .label {
+            font-style: italic;
+            opacity: 0.5;
+        }
+        .summary {
+            margin-top: 1.5vh;
+            margin-bottom: 1.5vh;
+        }
+    }
+}

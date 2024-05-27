@@ -1,0 +1,168 @@
+@import './components/utils';
+@import './components/typography';
+@import './components/socials';
+@import './components/container';
+@import './components/image';
+@import './components/dates';
+@import './components/list';
+@import './components/blockquote';
+@import './components/sections';
+
+/**
+ * Default Template
+ */
+
+/**
+ * Theme Header Fonts 
+ */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap');
+.crimson {
+    font-family: 'Crimson Text', serif;
+}
+
+.resume-viewer {
+    background: var(--default-background-color);
+    color: var(--default-text-color);
+    h1,h2,h3,h4,h5 {
+        color: var(--default-title-color);
+    }
+    .label {
+        color: var(--default-title-color);
+        opacity: 0.75;
+    }
+    a {
+        color: var(--default-link-color);
+    }
+    /* Main header fonts */
+    h1 {
+        font-weight: 600;
+    }
+    h2 {
+        @extend .crimson;
+    }
+
+    /* Resume header */
+    .resume-header { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3vh;;
+        img {
+            order: 2;
+        }
+        .label {
+            @extend .crimson;
+            font-size: 2vh;
+            &:before {
+                content: '';
+                width: 2vh;
+                height: 2vh;
+                background-color: #000;
+                display: block;float: left;
+                margin-right: 1vh;
+                background-color: var(--default-link-color);
+            }
+        }
+    }
+
+    /* Record heading styling */
+    /* Place the dates on the right */
+    .record {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            .dates {
+                order: 2;
+            }
+            .head {
+                order: 1;
+            }
+            @media screen and (max-width: 767px) {
+                display: block;
+                .dates {
+                    font-size: 90%;
+                }
+            }
+        }
+    }
+
+    .contact-details {
+        display: flex;
+        h3 {
+            margin-bottom: 1vh;
+        }
+        & > div {
+            flex: 1;
+        }
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
+    }
+
+    /* individual sections */
+    .skills {
+        .collection {
+            @extend .grid;
+        }
+        .level {
+            font-style: italic;
+            opacity: 0.7;
+            margin-bottom: 1vh;
+        }
+        .record {
+            border-bottom: none;
+            padding-right:1.5vh;
+        }
+    }
+
+    section.languages {
+        .collection {
+            display: flex;
+            flex-wrap: wrap;
+            .language {
+                padding: 1.5vh;
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border-bottom: none;
+                .header {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    .interests {
+        .collection {
+            @extend .grid;
+            .record {
+                margin: 1vh;
+                padding-bottom: 0;
+                padding: 1.5vh;
+                border-bottom: none;
+                border-radius: 10px;
+                .header {
+                    display: inline;
+                }
+            }
+        }
+    }
+    .projects {
+        .roles {
+            @extend .flat-list;
+        }
+    }
+}
+
+html[dir="rtl"] {
+    .resume-viewer {
+        .resume-header { 
+            .label {
+                &:before {
+                    float: right;
+                    margin-right: 0;
+                    margin-left: 1vh;
+                }
+            }
+        }
+    }
+}

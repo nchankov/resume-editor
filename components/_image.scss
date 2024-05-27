@@ -1,0 +1,12 @@
+/**
+ * Image Styling
+ */
+.resume-viewer {
+    img {
+        width: 13vh;
+        height: 13vh;
+        border-radius: 100%;
+        display: inline;
+        border: 1vh solid #ccc;
+    }
+}

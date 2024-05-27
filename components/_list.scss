@@ -1,0 +1,59 @@
+/**
+ * List styling
+ */
+.resume-viewer {
+    .list {
+        margin-bottom: 1vh;;
+        .title {
+            font-weight: bold;
+            font-size: 100%;
+        }
+        ul {
+            li {
+                display: list-item;
+                list-style-type: square;
+                margin-left: 2vh;
+            }
+        }
+    }
+}
+
+/**
+* use it as:
+* .somelist {
+*     @extend .flat-list;
+* }
+* Result would look like:
+* List Item 1, List Item 2, List Item 3...
+*/
+.resume-viewer {
+    .flat-list {
+        li {
+            display: inline;
+            list-style-type: none;
+            margin-left: 0;
+            &:after {
+                content: ', ';
+            }
+            &:last-child {
+                &:after {
+                    content: '';
+                }
+            }    
+        }
+    }
+}
+
+/** RTL */
+html[dir="rtl"] {
+    .resume-viewer {
+        .list {
+            ul {
+                li {
+                    margin-right: 2vh;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

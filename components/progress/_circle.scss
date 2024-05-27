@@ -1,0 +1,73 @@
+/**
+ * Circular progress bar with 5 and 6 steps
+ */
+.bar {
+    border-radius: 100%;
+    position: relative;
+    width: 4vh;
+    aspect-ratio: 1;
+    &::after {
+        content: '';
+        display: block;
+        border: solid 10px var(--bar-primary-color);
+        width: 4vh;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: transparent;
+        --mask: conic-gradient(var(--bar-primary-color) var(--p, 100%), transparent 0%) border-box;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &::before {
+        content: '';
+        display: block;
+        border: solid 10px var(--bar-secondary-color);
+        width: 4vh;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &.bar-5 {
+        &.level-1::after {
+            --p: 20%;
+        }
+        &.level-2::after {
+            --p: 40%;
+        }
+        &.level-3::after {
+            --p: 60%;
+        }
+        &.level-4::after {
+            --p: 80%;
+        }
+        &.level-5::after {
+            --p: 100%;
+        }
+    }
+    &.bar-6 {
+        &.level-1::after {
+            --p: 16.66%;
+        }
+        &.level-2::after {
+            --p: 33.33%;
+        }
+        &.level-3::after {
+            --p: 50%;
+        }
+        &.level-4::after {
+            --p: 66.66%;
+        }
+        &.level-5::after {
+            --p: 83.33%;
+        }
+        &.level-6::after {
+            --p: 100%;
+        }
+    }
+  }

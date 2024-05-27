@@ -1,0 +1,23 @@
+/**
+ * Blank Template
+ */
+.resume-viewer {
+    /**
+     * Record heading styling 
+     */
+    .record {
+        /**
+         * Place the dates on the right 
+         */
+        .header {
+            display: flex;
+            flex-direction: column;
+            .dates {
+                order: 1;
+            }
+            .head {
+                order: 2;
+            }
+        }
+    }
+}

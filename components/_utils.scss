@@ -1,0 +1,50 @@
+/* Grid styling */
+.grid {
+    display: grid;
+    grid-template-columns: 100%;
+    @media print {
+        grid-template-columns: 50% 50%;
+    }
+    @media (min-width: 768px) {
+        grid-template-columns: 50% 50%;
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: 50% 50%;
+    }
+    @media (min-width: 1280px) {
+        grid-template-columns: 33.3% 33.3% 33.3%;
+    }
+}
+/* Only 2 columns of content for shorter layouts*/
+.grid-small {
+    display: grid;
+    grid-template-columns: 100%;
+    @media print {
+        grid-template-columns: 50% 50%;
+    }
+    @media (min-width: 768px) {
+        grid-template-columns: 50% 50%;
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: 50% 50%;
+    }
+    @media (min-width: 1280px) {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+/* prevent having a margin in the top of the screen */
+@media print { 
+    body {
+        margin-top: 0;
+    }
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+
+/* make sections flex so they can be reordered*/
+.sections {
+    display: flex;
+    flex-direction: column;
+}

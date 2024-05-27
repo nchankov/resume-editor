@@ -1,0 +1,187 @@
+@import './components/utils';
+@import './components/list';
+@import './components/socials';
+@import './components/dates';
+@import './components/image';
+@import './components/container';
+@import './components/blockquote';
+@import './components/typography';
+@import './components/sections';
+
+/**
+ * Elegant template
+ */
+.resume-viewer {
+    color: var(--elegant-text-color);
+    a {
+        color: var(--elegant-link-color);
+    }
+    h1,h2,h3,h4,h5 {
+        color: var(--elegant-title-color);
+    }
+    /* Record heading styling */
+    .record {
+        /* Place the dates on the right */
+        .header {
+            display: flex;
+            flex-direction: column;
+            .dates {
+                order: 1;
+            }
+            .head {
+                order: 2;
+            }
+        }
+    }
+    .sections {
+        position: relative;
+        background-color: var(--elegant-background-color);
+        padding: 2vh;
+        float: right;
+        width: 60%;
+        @media screen and (max-width: 767px) {
+            margin-top: 22vh;
+            float: none;
+            width: 100%;
+        }
+
+        section {
+            h2 {
+                font-weight: bold;
+                font-size: 2vh;
+                border-bottom: 2px solid var(--elegant-title-border-color);
+            }
+        }
+        .record {
+            border-color: var(--elegant-section-separator-color);
+            &:last-child {
+                border-color: transparent;
+            }
+        }
+    }
+    .resume-header {
+        text-align: center;
+        flex-direction: column;
+        img {
+            order: 0;
+            border-color: var(--elegant-image-border-color);
+            margin-bottom: 2vh;
+        }
+        .title {
+            order: 1;
+            text-align: center;
+            margin-bottom: 4vh;;
+            h1 {
+                font-size: 2vh;
+            }
+            .label {
+                font-size: 1.2vh;
+            }
+        }
+    }
+    .basics {
+        position: absolute;
+        left: -67%;
+        width: 67%;
+        padding: 2vh;
+        margin-top: -2vh;
+        @media screen and (max-width: 767px) {
+            position: relative;
+            left: 0;
+            background-color: transparent;
+            width: 100%;
+            padding: 0;
+            .record {
+                margin-top: -22vh;
+            }
+        }
+        .profiles {
+            clear: both;
+            margin-top: 2vh;;
+            .content {
+                padding: 1vh;
+            }
+            .profile .info::before {
+                padding-left: 2vh;
+            }
+            .profile {
+                clear:both;
+            }
+        }
+        .contact-details {
+            .content {
+                padding: 1vh;
+            }
+            h3 {
+                border-bottom: 2px solid var(--elegant-title-border-color);
+                margin-bottom: 1vh;
+                padding-bottom: 1vh;
+
+            }
+        }
+        .contact-details .address .value {
+            display: inline;;
+        }
+    }
+    .info {
+        line-height: 2vh;
+        clear: both;
+        .label {
+            font-weight: 600;
+            &::after {
+                content: ': ';
+            }
+        }
+    }
+    .languages {
+        .collection {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .language {
+            padding-bottom: 0;
+            padding: 1.5vh;
+            border-bottom: none;
+            &:last-child {
+                border-right: none;
+            }
+            .header {
+                display: inline;
+            }
+            @media screen and (max-width: 767px) {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .skills, .interests {
+        background-color: var(--elegant-special-background-color);
+        margin-left: -2vh;
+        color: var(--elegant-special-text-color);
+        h2,h3 {
+            color: var(--elegant-special-text-color);
+        }
+        margin-right: -2vh;
+        padding: 2vh;
+        margin-top: -2vh;
+        .collection {
+            @extend .grid-small;
+        }
+        .record {
+            border-bottom: none;
+            padding-right:1.5vh;
+            padding-bottom: 0;
+        }
+    }
+}
+
+/* RTL modifications */
+html[dir="rtl"] {
+    .resume-viewer {
+        .sections {
+            float: left;
+        }
+        .basics {
+            left: 100%;
+        }
+    }
+}
